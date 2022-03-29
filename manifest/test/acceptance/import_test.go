@@ -70,7 +70,7 @@ func TestKubernetesManifest_Import(t *testing.T) {
 
 	tf.Apply(ctx)
 
-	tf.State(ctx)
+	s, err = tf.State(ctx)
 	if err != nil {
 		t.Fatalf("Failed to retrieve terraform state: %q", err)
 	}
